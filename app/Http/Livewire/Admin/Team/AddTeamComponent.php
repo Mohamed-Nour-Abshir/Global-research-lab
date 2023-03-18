@@ -28,6 +28,7 @@ class AddTeamComponent extends Component
         $consuller = new Team();
         $consuller->name = $this->name;
         $consuller->destination = $this->destination;
+        
         $imagename = Carbon::now()->timestamp.'.'. $this->image->extension();
         $this->image->storeAs('Team',$imagename);
         $consuller->image = $imagename;

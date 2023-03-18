@@ -79,9 +79,9 @@
 
             <!-- Nav Item - Review -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{route('admin.reviews')}}">
                     <i class="fas fa-fw fa-certificate"></i>
-                    <span>Manage Certification</span></a>
+                    <span>Manage Reviews</span></a>
             </li>
             <hr class="sidebar-divider">
 

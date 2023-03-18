@@ -4,6 +4,9 @@ use App\Http\Livewire\AboutComponent;
 use App\Http\Livewire\Admin\DashboardComponent;
 use App\Http\Livewire\Admin\HomeSlider\AddHomeSliderComponent;
 use App\Http\Livewire\Admin\HomeSlider\HomeSliderComponent;
+use App\Http\Livewire\Admin\Reviews\AddReviewsComponent;
+use App\Http\Livewire\Admin\Reviews\EditReviewsComponent;
+use App\Http\Livewire\Admin\Reviews\ReviewsComponent;
 use App\Http\Livewire\Admin\Services\AddServicesComponent;
 use App\Http\Livewire\Admin\Services\EditServicesComponent;
 use App\Http\Livewire\Admin\Services\ServicesComponent;
@@ -49,4 +52,9 @@ Route::middleware(['auth:sanctum','verified' ,'authadmin'])->group(function () {
     Route::get('/admin-services',ServicesComponent::class)->name('admin.services');
     Route::get('/add-services',AddServicesComponent::class)->name('admin.addServices');
     Route::get('/edit-services/{id}',EditServicesComponent::class)->name('admin.editServices');
+
+    //reviews
+    Route::get('/reviews',ReviewsComponent::class)->name('admin.reviews');
+    Route::get('/add-reviews',AddReviewsComponent::class)->name('admin.addReview');
+    Route::get('/edit-reviews/{id}',EditReviewsComponent::class)->name('admin.editreviews');
 });
