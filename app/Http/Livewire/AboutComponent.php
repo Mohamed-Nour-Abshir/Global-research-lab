@@ -2,12 +2,14 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Team;
 use Livewire\Component;
 
 class AboutComponent extends Component
 {
     public function render()
     {
-        return view('livewire.about-component')->layout('layouts.base');
+        $consullers = Team::all();
+        return view('livewire.about-component',['consullers' => $consullers])->layout('layouts.base');
     }
 }

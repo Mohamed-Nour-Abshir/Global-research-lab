@@ -74,33 +74,18 @@
                 <hr class="w-25 mx-auto bg-primary">
             </div>
             <div class="row g-5">
+                @foreach ($consullers as $consuller)
                 <div class="col-lg-4">
                     <div class="team-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{asset('assets/img/ceo.jpg')}}" alt="" style="width: 500px; height:400px;">
+                        <img class="img-fluid" src="{{asset('assets/img/Team')}}/{{$consuller->image}}" alt="" style="width: 500px; height:400px;">
                         <div class="team-text w-100 position-absolute top-50 text-center bg-primary p-4">
-                            <h3 class="text-white">Md. Abdul Momin</h3>
-                            <p class="text-white text-uppercase mb-0">Senior counsellor of Uk & Germany </p>
+                            <h3 class="text-white">{{$consuller->name}}</h3>
+                            <p class="text-white text-uppercase mb-0">{{$consuller->destination}} </p>
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-4">
-                    <div class="team-item position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{asset('assets/img/profile.jpg')}}" alt="">
-                        <div class="team-text w-100 position-absolute top-50 text-center bg-primary p-4">
-                            <h3 class="text-white">Nour Abshir</h3>
-                            <p class="text-white text-uppercase mb-0">Senior counsellor of Canada & USA </p>
-                        </div>
-                    </div>
-                </div>
-                <div class="col-lg-4">
-                    <div class="team-item position-relative overflow-hidden">
-                        <img class="img-fluid w-100" src="{{asset('assets/img/team-3.jpg')}}" alt="" style="width: 500px; height:400px;">
-                        <div class="team-text w-100 position-absolute top-50 text-center bg-primary p-4">
-                            <h3 class="text-white">Full Name</h3>
-                            <p class="text-white text-uppercase mb-0">Designation</p>
-                        </div>
-                    </div>
-                </div>
+                @endforeach
+
             </div>
         </div>
         <!-- Team End -->

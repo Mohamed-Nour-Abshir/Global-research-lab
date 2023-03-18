@@ -4,6 +4,10 @@ use App\Http\Livewire\AboutComponent;
 use App\Http\Livewire\Admin\DashboardComponent;
 use App\Http\Livewire\Admin\HomeSlider\AddHomeSliderComponent;
 use App\Http\Livewire\Admin\HomeSlider\HomeSliderComponent;
+use App\Http\Livewire\Admin\Team\AddTeamComponent;
+use App\Http\Livewire\Admin\Team\EditTeamComponent;
+use App\Http\Livewire\Admin\Team\TeamComponent as TeamTeamComponent;
+use App\Http\Livewire\Admin\TeamComponent;
 use App\Http\Livewire\BlogComponent;
 use App\Http\Livewire\ContactComponent;
 use App\Http\Livewire\HomeComponent;
@@ -32,4 +36,9 @@ Route::middleware(['auth:sanctum','verified' ,'authadmin'])->group(function () {
     Route::get('/dashboard', DashboardComponent::class)->name('dashboard');
     Route::get('/manage-homesliders',HomeSliderComponent::class)->name('admin.homeslider');
     Route::get('/add-homesliders',AddHomeSliderComponent::class)->name('admin.addhomeslider');
+
+    //Team
+    Route::get('/consullers',TeamTeamComponent::class)->name('admin.team');
+    Route::get('/add-consuller',AddTeamComponent::class)->name('admin.addTeam');
+    Route::get('/edit-consuller/{id}',EditTeamComponent::class)->name('admin.editTeam');
 });
