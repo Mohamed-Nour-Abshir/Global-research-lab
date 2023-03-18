@@ -71,9 +71,9 @@
 
             <!-- Nav Item - Review -->
             <li class="nav-item">
-                <a class="nav-link" href="">
+                <a class="nav-link" href="{{route('admin.services')}}">
                     <i class="fas fa-fw fa-star"></i>
-                    <span>Manage Reviews</span></a>
+                    <span>Manage Services</span></a>
             </li>
             <hr class="sidebar-divider">
 
