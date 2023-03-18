@@ -2,6 +2,7 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Blog;
 use App\Models\HomeSlider;
 use App\Models\Review;
 use App\Models\Service;
@@ -16,6 +17,7 @@ class HomeComponent extends Component
         $consullers = Team::all();
         $services = Service::all();
         $reviews = Review::all();
-        return view('livewire.home-component',['sliders' =>$sliders,'consullers'=>$consullers,'services'=>$services,'reviews'=>$reviews])->layout('layouts.base');
+        $news = Blog::latest()->take(3)->get();
+        return view('livewire.home-component',['sliders' =>$sliders, 'consullers'=>$consullers, 'services'=>$services, 'reviews'=>$reviews, 'news'=>$news])->layout('layouts.base');
     }
 }

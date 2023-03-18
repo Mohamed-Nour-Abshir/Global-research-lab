@@ -107,7 +107,7 @@
                     <div class="service-item bg-secondary text-center px-5">
                         <div class="d-flex align-items-center justify-content-center text-white rounded-circle mx-auto mb-4" style="width: 90px; height: 90px;">
                             <!-- <i class="fa fa-user-tie fa-2x"></i> -->
-                            <i><img src="{{asset('assets/img/Services')}}/{{$service->image}}" class="img-fluid" alt=""></i>
+                            <i><img src="{{asset('assets/img/Services')}}/{{$service->image}}" class="img-fluid rounded-circle" alt="" width="90" height="90"></i>
                         </div>
                         <h3 class="mb-3">{{$service->name}}</h3>
                         <p class="mb-0">{{$service->description}}</p>
@@ -321,69 +321,32 @@
             <hr class="w-25 mx-auto bg-primary">
         </div>
         <div class="row g-5">
-            <div class="col-lg-4">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{asset('assets/img/blog-1.jpg')}}" alt="">
-                    </div>
-                    <div class="bg-secondary d-flex">
-                        <div class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                            <span>01</span>
-                            <h5 class="text-uppercase m-0">Jan</h5>
-                            <span>2045</span>
+
+            @foreach ($news as $blog)
+                <div class="col-lg-4">
+                    <div class="blog-item">
+                        <div class="position-relative overflow-hidden">
+                            <img class="img-fluid" src="{{asset('assets/img/Blogs')}}/{{$blog->image}}" alt="">
                         </div>
-                        <div class="d-flex flex-column justify-content-center py-3 px-4">
-                            <div class="d-flex mb-2">
-                                <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
-                                <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
+                        <div class="bg-secondary d-flex">
+                            <div class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
+                                <span>{{date("d", strtotime($blog->date))}}</span>
+                                <h5 class="text-uppercase m-0">{{date("M", strtotime($blog->date))}}</h5>
+                                <span>{{date("Y", strtotime($blog->date))}}</span>
                             </div>
-                            <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
+                            <div class="d-flex flex-column justify-content-center py-3 px-4">
+                                <div class="d-flex mb-2">
+                                    <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
+                                    <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>{{$blog->name}}</small>
+                                </div>
+                                <a class="h4" href="">{{$blog->description}}</a>
+                            </div>
                         </div>
                     </div>
                 </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{asset('assets/img/blog-2.jpg')}}" alt="">
-                    </div>
-                    <div class="bg-secondary d-flex">
-                        <div class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                            <span>01</span>
-                            <h5 class="text-uppercase m-0">Jan</h5>
-                            <span>2045</span>
-                        </div>
-                        <div class="d-flex flex-column justify-content-center py-3 px-4">
-                            <div class="d-flex mb-2">
-                                <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
-                                <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                            </div>
-                            <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="col-lg-4">
-                <div class="blog-item">
-                    <div class="position-relative overflow-hidden">
-                        <img class="img-fluid" src="{{asset('assets/img/blog-3.jpg')}}" alt="">
-                    </div>
-                    <div class="bg-secondary d-flex">
-                        <div class="flex-shrink-0 d-flex flex-column justify-content-center text-center bg-primary text-white px-4">
-                            <span>01</span>
-                            <h5 class="text-uppercase m-0">Jan</h5>
-                            <span>2045</span>
-                        </div>
-                        <div class="d-flex flex-column justify-content-center py-3 px-4">
-                            <div class="d-flex mb-2">
-                                <small class="text-uppercase me-3"><i class="bi bi-person me-2"></i>Admin</small>
-                                <small class="text-uppercase me-3"><i class="bi bi-bookmarks me-2"></i>Web Design</small>
-                            </div>
-                            <a class="h4" href="">Magna sea dolor ipsum amet lorem eos</a>
-                        </div>
-                    </div>
-                </div>
-            </div>
+            @endforeach
+
+
         </div>
     </div>
     <!-- Blog End -->

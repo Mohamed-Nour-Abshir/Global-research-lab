@@ -2,12 +2,15 @@
 
 namespace App\Http\Livewire;
 
+use App\Models\Blog;
 use Livewire\Component;
 
 class BlogComponent extends Component
 {
     public function render()
     {
-        return view('livewire.blog-component')->layout('layouts.base');
+        $blogs = Blog::latest()->paginate(10);
+        $recents = Blog::all();
+        return view('livewire.blog-component',['blogs'=>$blogs, 'recents'=>$recents])->layout('layouts.base');
     }
 }

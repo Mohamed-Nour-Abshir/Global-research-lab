@@ -1,6 +1,9 @@
 <?php
 
 use App\Http\Livewire\AboutComponent;
+use App\Http\Livewire\Admin\Blog\AddBlogComponent;
+use App\Http\Livewire\Admin\Blog\BlogComponent as BlogBlogComponent;
+use App\Http\Livewire\Admin\Blog\EditBlogComponent;
 use App\Http\Livewire\Admin\DashboardComponent;
 use App\Http\Livewire\Admin\HomeSlider\AddHomeSliderComponent;
 use App\Http\Livewire\Admin\HomeSlider\HomeSliderComponent;
@@ -57,4 +60,9 @@ Route::middleware(['auth:sanctum','verified' ,'authadmin'])->group(function () {
     Route::get('/reviews',ReviewsComponent::class)->name('admin.reviews');
     Route::get('/add-reviews',AddReviewsComponent::class)->name('admin.addReview');
     Route::get('/edit-reviews/{id}',EditReviewsComponent::class)->name('admin.editreviews');
+
+    //News
+    Route::get('/news',BlogBlogComponent::class)->name('admin.news');
+    Route::get('/add-news',AddBlogComponent::class)->name('admin.addNews');
+    Route::get('/edit-news/{id}',EditBlogComponent::class)->name('admin.edit');
 });
