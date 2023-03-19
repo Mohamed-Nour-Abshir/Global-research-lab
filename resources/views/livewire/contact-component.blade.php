@@ -30,28 +30,28 @@
                             <div class="form-floating">
                                 <input type="text" class="form-control @error('name') is-invalid @enderror" id="form-floating-1" placeholder="John Doe" wire:model='name'>
                                 <label for="form-floating-1">Full Name</label>
-                                @error('name')<span class="text-danger">{{$message}}</span> @enderror <br>
+                                @error('name')<span class="text-danger">{{$message}}</span> @enderror
                             </div>
                         </div>
                         <div class="col-6">
                             <div class="form-floating">
                                 <input type="email" class="form-control  @error('email') is-invalid @enderror" id="form-floating-2" placeholder="name@example.com" wire:model='email'>
                                 <label for="form-floating-2">Email address</label>
-                                @error('email')<span class="text-danger">{{$message}}</span> @enderror <br>
+                                @error('email')<span class="text-danger">{{$message}}</span> @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
                                 <input type="text" class="form-control @error('subject') is-invalid @enderror" id="form-floating-3" placeholder="Subject" wire:model='subject'>
                                 <label for="form-floating-3">Subject</label>
-                                @error('subject')<span class="text-danger">{{$message}}</span> @enderror <br>
+                                @error('subject')<span class="text-danger">{{$message}}</span> @enderror
                             </div>
                         </div>
                         <div class="col-12">
                             <div class="form-floating">
                                 <textarea class="form-control @error('message') is-invalid @enderror" placeholder="Message" id="form-floating-4" style="height: 150px" wire:model='message'></textarea>
                                 <label for="form-floating-4">Message</label>
-                                @error('message')<span class="text-danger">{{$message}}</span> @enderror <br>
+                                @error('message')<span class="text-danger">{{$message}}</span> @enderror
                                 </div>
                         </div>
                         <div class="col-12">

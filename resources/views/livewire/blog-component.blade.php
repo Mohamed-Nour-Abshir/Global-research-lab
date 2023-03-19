@@ -96,7 +96,7 @@
 
                 <!-- Image Start -->
                 <div class="mb-5">
-                    <img src="{{asset('assets/img/blog-1.jpg')}}" alt="" class="img-fluid">
+                    <img src="{{asset('assets/img/blog.jpg')}}" alt="" class="img-fluid">
                 </div>
                 <!-- Image End -->
 

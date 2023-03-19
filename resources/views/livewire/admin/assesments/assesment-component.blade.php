@@ -18,6 +18,7 @@
                     <table class="table table-bordered" id="dataTable" width="100%" cellspacing="0">
                         <thead>
                             <tr>
+                                <th>Sl No.</th>
                                 <th>Name</th>
                                 <th>Email</th>
                                 <th>Phone No.</th>
@@ -27,8 +28,12 @@
                             </tr>
                         </thead>
                         <tbody>
+                            <?php
+                              $i =0;
+                            ?>
                             @foreach ($assesments as $assesment)
                                 <tr>
+                                    <td>{{++ $i}}</td>
                                     <td>  {{$assesment->name}}</td>
                                     <td>  {{$assesment->email}}</td>
                                     <td>  {{$assesment->phone}}</td>
