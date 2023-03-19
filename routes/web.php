@@ -1,9 +1,11 @@
 <?php
 
 use App\Http\Livewire\AboutComponent;
+use App\Http\Livewire\Admin\Assesments\AssesmentComponent;
 use App\Http\Livewire\Admin\Blog\AddBlogComponent;
 use App\Http\Livewire\Admin\Blog\BlogComponent as BlogBlogComponent;
 use App\Http\Livewire\Admin\Blog\EditBlogComponent;
+use App\Http\Livewire\Admin\Contacts\ContactsComponent;
 use App\Http\Livewire\Admin\DashboardComponent;
 use App\Http\Livewire\Admin\HomeSlider\AddHomeSliderComponent;
 use App\Http\Livewire\Admin\HomeSlider\HomeSliderComponent;
@@ -34,10 +36,10 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', HomeComponent::class);
+Route::get('/', HomeComponent::class)->name('home');
 Route::get('about',AboutComponent::class);
-Route::get('services', ServiceComponent::class);
-Route::get('contactUs', ContactComponent::class);
+Route::get('services', ServiceComponent::class)->name('services');
+Route::get('contactUs', ContactComponent::class)->name('contacts');
 Route::get('blog',BlogComponent::class);
 
 
@@ -65,4 +67,10 @@ Route::middleware(['auth:sanctum','verified' ,'authadmin'])->group(function () {
     Route::get('/news',BlogBlogComponent::class)->name('admin.news');
     Route::get('/add-news',AddBlogComponent::class)->name('admin.addNews');
     Route::get('/edit-news/{id}',EditBlogComponent::class)->name('admin.edit');
+
+    //Contcts
+    Route::get('/dashboard-contacts',ContactsComponent::class)->name('admin.contacts');
+
+    //assesments
+    Route::get('/assesments',AssesmentComponent::class)->name('admin.assesment');
 });
